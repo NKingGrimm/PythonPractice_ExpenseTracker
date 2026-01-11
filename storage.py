@@ -11,7 +11,7 @@ def load_expenses() -> list[Expense]:
   retList = list()
 
   with open(dataJSONPath, 'r') as file:
-    savedExpenses = json.loads(file)
+    savedExpenses = json.loads(file.read())
 
     for i in savedExpenses:
       retList.append(Expense.from_dict(i))
